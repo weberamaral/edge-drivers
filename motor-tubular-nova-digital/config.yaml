@@ -2,4 +2,4 @@ name: Motor Tubular Nova Digital
 packageKey: motor-tubular-nova-digital
 permissions:
   zigbee: {}
-description: "SmartThings Edge Driver para o Motor Tubular da Nova Digital. Modelos suportados em: https://github.com/weberamaral/edge-drivers/tree/main/motor-tubular-nova-digital"
+description: "SmartThings Edge Driver para o Motor Tubular da Nova Digital. Modelos suportados em: https://github.com/weberamaral/edge-drivers/blob/main/motor-tubular-nova-digital/README.md"
