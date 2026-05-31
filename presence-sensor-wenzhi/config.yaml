@@ -2,4 +2,5 @@ name: Sensor MMWave Wenzhi
 packageKey: sensor-presence-wenzhi
 permissions:
   zigbee: {}
-description: "SmartThings Edge Driver para o Sensor de Presença da Wenzhi 24G. Modelos suportados em: https://github.com/weberamaral/edge-drivers/blob/main/presence-sensor-wenzhi/README.md"
+description: "SmartThings Edge Driver para o Sensor de Presença da Wenzhi 24G."
+vendorSupportInformation: 'Esse Driver necessita de um HUb com Zigbbe e a última versão instalada do firmware. Mais informações: <a href="https://github.com/weberamaral/edge-drivers/blob/main/presence-sensor-wenzhi/README.md">https://github.com/weberamaral/edge-drivers/blob/main/presence-sensor-wenzhi/README.md</a>'
