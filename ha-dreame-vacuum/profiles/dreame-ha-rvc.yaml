@@ -1,0 +1,240 @@
+# https://community.smartthings.com/t/visible-condition-with-embedded-configs/256247/11
+name: dreame-ha-rvc
+components:
+  - id: main
+    capabilities:
+      - id: robotCleanerOperatingState
+        version: 1
+      - id: mode
+        version: 1
+      - id: serviceArea
+        version: 1
+      - id: signalprogram56169.rvcCurrentRoom
+        version: 1
+      - id: fanSpeed
+        version: 1
+      - id: fanOscillationMode
+        version: 1
+      - id: battery
+        version: 1
+      - id: refresh
+        version: 1
+      - id: healthCheck
+        version: 1
+    categories:
+      - name: RobotCleaner
+deviceConfig:
+  dashboard:
+    states:
+      - component: main
+        capability: robotCleanerOperatingState
+        version: 1
+    actions:
+      - component: main
+        capability: robotCleanerOperatingState
+        version: 1
+  detailView:
+    - component: main
+      capability: robotCleanerOperatingState
+      version: 1
+    - component: main
+      capability: signalprogram56169.rvcCurrentRoom
+      version: 1
+      patch:
+        - op: replace
+          path: /0/label
+          value: "Cômodo Atual"
+    - component: main
+      capability: mode
+      version: 1
+    - component: main
+      capability: serviceArea
+      version: 1
+    - component: main
+      capability: fanSpeed
+      version: 1
+      label: Volume de Água
+      values:
+        - key: fanSpeed.value
+          range:
+            - 1
+            - 3
+          step: 1
+      patch:
+        - op: replace
+          path: /0/label
+          value: Volume de Água
+    - component: main
+      capability: fanOscillationMode
+      version: 1
+      label: Potência de Sucção
+      values:
+        - key: fanOscillationMode.value
+          alternatives:
+            - key: fixed
+              value: Silencioso
+            - key: vertical
+              value: Padrão
+            - key: horizontal
+              value: Forte
+            - key: all
+              value: Turbo
+      patch:
+        - op: replace
+          path: /0/label
+          value: Potência de Sucção
+    - component: main
+      capability: battery
+      version: 1
+    - component: main
+      capability: refresh
+      version: 1
+    - component: main
+      capability: healthCheck
+      version: 1
+  automation:
+    conditions:
+      - component: main
+        capability: robotCleanerOperatingState
+        version: 1
+      - component: main
+        capability: signalprogram56169.rvcCurrentRoom
+        version: 1
+      - component: main
+        capability: battery
+        version: 1
+      - component: main
+        capability: fanSpeed
+        version: 1
+        values:
+          - key: fanSpeed.value
+            enabledValues:
+              - 1
+              - 2
+              - 3
+            alternatives:
+              - key: 1
+                value: Baixo
+              - key: 2
+                value: Médio
+              - key: 3
+                value: Alto
+        patch:
+          - op: replace
+            path: /0/label
+            value: Volume de Água
+      - component: main
+        capability: fanOscillationMode
+        version: 1
+        values:
+          - key: fanOscillationMode.value
+            alternatives:
+              - key: fixed
+                value: Silencioso
+              - key: vertical
+                value: Padrão
+              - key: horizontal
+                value: Forte
+              - key: all
+                value: Turbo
+        patch:
+          - op: replace
+            path: /0/label
+            value: Potência de Sucção
+    actions:
+      - component: main
+        capability: robotCleanerOperatingState
+        version: 1
+      - component: main
+        capability: fanSpeed
+        version: 1
+        values:
+          - key: fanSpeed.value
+            enabledValues:
+              - 1
+              - 2
+              - 3
+            alternatives:
+              - key: 1
+                value: Baixo
+              - key: 2
+                value: Médio
+              - key: 3
+                value: Alto
+        patch:
+          - op: replace
+            path: /0/label
+            value: Volume de Água
+      - component: main
+        capability: fanOscillationMode
+        version: 1
+        values:
+          - key: fanOscillationMode.value
+            alternatives:
+              - key: fixed
+                value: Silencioso
+              - key: vertical
+                value: Padrão
+              - key: horizontal
+                value: Forte
+              - key: all
+                value: Turbo
+        patch:
+          - op: replace
+            path: /0/label
+            value: Potência de Sucção
+preferences:
+  - name: haHost
+    title: "Home Assistant Host"
+    description: "IP ou hostname do Home Assistant. Ex: 10.10.20.130"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+
+  - name: haPort
+    title: "Home Assistant Port"
+    description: "Porta do Home Assistant. Ex: 8123"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 65535
+      default: 8123
+
+  - name: haToken
+    title: "Home Assistant Token"
+    description: "Long-Lived Access Token do Home Assistant"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: password
+      default: ""
+
+  - name: vacuumEntityId
+    title: "Vacuum Entity ID"
+    description: "Entity ID do aspirador no Home Assistant. Ex: vacuum.max"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: "vacuum.max"
+
+  - name: cleaningModeEntityId
+    title: "Cleaning Mode Entity ID"
+    description: "Entity ID do modo de limpeza no HA"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: "select.max_cleaning_mode"
+
+  - name: waterVolumeEntityId
+    title: "Water Volume Entity ID"
+    description: "Entity ID do volume de água no HA"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: "select.max_water_volume"

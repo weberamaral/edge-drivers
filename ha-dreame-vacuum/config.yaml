@@ -1,0 +1,6 @@
+name: "Driver Edge ST Dreame Vacuum"
+packageKey: "driver-edge-st-dreame-vacuum"
+description: "SmartThings Edge Driver para Home Assistant Vacuum via WebSocket"
+permissions:
+  lan: {}
+  discovery: {}

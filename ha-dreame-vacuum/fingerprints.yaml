@@ -1,0 +1,6 @@
+lan:
+  - id: dreame-ha-websocket
+    deviceLabel: Dreame via Home Assistant
+    manufacturerName: Home Assistant
+    modelName: Dreame Vacuum WebSocket
+    profileName: dreame-ha-rvc

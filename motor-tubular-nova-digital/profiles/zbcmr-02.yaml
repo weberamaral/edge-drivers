@@ -1,0 +1,41 @@
+name: zbcmr-02
+components:
+  - id: main
+    capabilities:
+      - id: windowShade
+        version: 1
+      - id: windowShadePreset
+        version: 1
+      - id: windowShadeLevel
+        version: 1
+      - id: battery
+        version: 1
+      - id: refresh
+        version: 1
+    categories:
+      - name: Blind
+preferences:
+  - name: reverseDirection
+    title: Direção do Motor
+    description: Configuração do sentido de operação do motor
+    required: false
+    preferenceType: enumeration
+    definition:
+      options:
+        forward: Normal
+        back: Invertido
+      default: forward
+  - name: calibrationAction
+    title: Calibração
+    description: Executa ações de calibração dos limites do motor
+    required: false
+    preferenceType: enumeration
+    definition:
+      options:
+        none: Nenhuma ação
+        up: Salvar limite superior
+        down: Salvar limite inferior
+        up_delete: Remover limite superior
+        down_delete: Remover limite inferior
+        remove_top_bottom: Remover todos os limites
+      default: none

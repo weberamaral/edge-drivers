@@ -1,0 +1,67 @@
+name: wz-m10024
+components:
+  - id: main
+    capabilities:
+      - id: presenceSensor
+        version: 1
+      - id: illuminanceMeasurement
+        version: 1
+      - id: refresh
+        verision: 1
+    categories:
+      - name: PresenceSensor
+preferences:
+  - name: nearDetection
+    title: Detecção Próxima
+    description: "Defina o valor do intervalo de detecção recente, abaixo do qual nenhuma detecção será realizada."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 950
+      default: 0
+  - name: farDetection
+    title: Detecção Distante
+    description: "Defina o valor máximo do alcance de detecção, acima do qual nenhuma detecção será realizada."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 950
+      default: 300
+  - name: presenceSensitivity
+    title: Sensibilidade da Presença
+    description: "Defina o valor de sensibilidade do sensor para determinar se há alguém presente ou não."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 9
+      default: 7
+  - name: sensitivity
+    title: Sensibilidade
+    description: "Defina o valor de sensibilidade do sensor para determinar se há uma área tripulada ou não tripulada."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 9
+      default: 7
+  - name: detectionDelay
+    title: Atraso de Detecção
+    description: "Defina o tempo de atraso para o sensor determinar que não há ninguém presente."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 100
+      default: 10
+  - name: fadingTime
+    title: Tempo de Desvanecimento
+    description: "Um número inteiro entre 0 e 15000. ATENÇÃO: Valores muito baixos podem causar congestionamento na rede Zigbee."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 5
+      maximum: 1500
+      default: 90

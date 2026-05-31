@@ -1,0 +1,6 @@
+zigbeeManufacturer:
+  - id: "TS0105/_TZE600_5cu64znk"
+    model: TS0105
+    manufacturer: _TZE600_5cu64znk
+    deviceProfileName: zbcmr-02
+    deviceLabel: Motor Tubular Nova Digital

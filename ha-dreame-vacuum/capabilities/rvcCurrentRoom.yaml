@@ -1,0 +1,15 @@
+name: Rvc Current Room
+status: proposed
+attributes:
+  currentRoom:
+    schema:
+      type: object
+      additionalProperties: false
+      properties:
+        value:
+          type: string
+      required:
+        - value
+
+id: signalprogram56169.rvcCurrentRoom
+version: 1

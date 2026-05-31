@@ -1,0 +1,9 @@
+{
+  "tag": "pt-BR",
+  "label": "Cômodo Atual",
+  "attributes": {
+    "currentRoom": {
+      "label": "Cômodo Atual"
+    }
+  }
+}

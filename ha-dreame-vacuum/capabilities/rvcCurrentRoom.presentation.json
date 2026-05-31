@@ -1,0 +1,33 @@
+{
+  "dashboard": {
+    "states": [
+      {
+        "label": "{{currentRoom.value}}"
+      }
+    ],
+    "actions": []
+  },
+  "detailView": [
+    {
+      "label": "Cômodo atual",
+      "displayType": "state",
+      "state": {
+        "label": "{{currentRoom.value}}"
+      }
+    }
+  ],
+  "automation": {
+    "conditions": [
+      {
+        "label": "Cômodo atual",
+        "displayType": "textField",
+        "textField": {
+          "value": "currentRoom.value"
+        }
+      }
+    ],
+    "actions": []
+  },
+  "id": "signalprogram56169.rvcCurrentRoom",
+  "version": 1
+}

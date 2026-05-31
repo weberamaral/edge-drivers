@@ -1,0 +1,6 @@
+zigbeeManufacturer:
+  - id: TS0601/_TZE204_gkfbdvyx
+    model: TS0601
+    manufacturer: _TZE204_gkfbdvyx
+    deviceProfileName: wz-m10024
+    deviceLabel: "Sensor de Presença Wenzhi"
