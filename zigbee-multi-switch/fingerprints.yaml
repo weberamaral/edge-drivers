@@ -4,3 +4,8 @@ zigbeeManufacturer:
     manufacturer: _TZ3210_urjf5u18
     model: TS011F
     deviceProfileName: powerstrip
+  - id: "Coibeu TS011F 4CH USB"
+    deviceLabel: Coibeu 2 Tomadas + 2 USB
+    manufacturer: _TZ3210_8n4dn1ne
+    model: TS011F
+    deviceProfileName: powerstrip

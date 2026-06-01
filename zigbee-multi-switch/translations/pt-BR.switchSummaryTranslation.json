@@ -1,0 +1,9 @@
+{
+  "tag": "pt-BR",
+  "label": "Status da Tomada",
+  "attributes": {
+    "summary": {
+      "label": "Status da Tomada"
+    }
+  }
+}
