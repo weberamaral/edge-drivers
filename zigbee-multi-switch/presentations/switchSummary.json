@@ -1,0 +1,20 @@
+{
+  "dashboard": {
+    "states": [
+      {
+        "label": "{{summary.value}}"
+      }
+    ],
+    "actions": [],
+    "panelItems": []
+  },
+  "detailView": [
+    {
+      "label": "Tomadas Ligadas",
+      "displayType": "state",
+      "state": {
+        "label": "{{summary.value}}"
+      }
+    }
+  ]
+}

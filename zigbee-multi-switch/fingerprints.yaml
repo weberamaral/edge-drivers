@@ -1,0 +1,6 @@
+zigbeeManufacturer:
+  - id: "_TZ3210_urjf5u18/TS011F"
+    deviceLabel: Tuya Power Strip
+    manufacturer: _TZ3210_urjf5u18
+    model: TS011F
+    deviceProfileName: powerstrip

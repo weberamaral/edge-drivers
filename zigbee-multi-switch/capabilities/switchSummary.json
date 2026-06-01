@@ -1,0 +1,22 @@
+{
+  "id": "signalprogram56169.switchSummary",
+  "version": 1,
+  "status": "proposed",
+  "name": "Switch Summary",
+  "attributes": {
+    "summary": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["value"]
+      },
+      "enumCommands": []
+    }
+  },
+  "commands": {}
+}

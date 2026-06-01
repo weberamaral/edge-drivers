@@ -1,0 +1,5 @@
+name: "Tomada 4 canais Zigbee"
+packageKey: "tomada-4-canais-zigbee"
+description: "SmartThings Edge Driver para tomadas de 4 canais."
+permissions:
+  zigbee: {}
