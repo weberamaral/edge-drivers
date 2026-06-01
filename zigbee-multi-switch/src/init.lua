@@ -4,6 +4,7 @@ local ZigbeeDriver = require "st.zigbee"
 local clusters = require "st.zigbee.zcl.clusters"
 
 local log = require "log"
+local write = require "powerstrip.write_attribute"
 
 local OnOff = clusters.OnOff
 
@@ -226,6 +227,40 @@ local function device_init(_, device)
 end
 
 --------------------------------------------------
+-- INFO CHANGED
+--------------------------------------------------
+
+local function do_preferences(driver, device, event, args)
+  log.info(string.format("DO PREFERENCES %s", device.label))
+  if device.network_type == "DEVICE_EDGE_CHILD" then return end -- device (is child device)
+  for id, value in pairs(device.preferences) do
+    local old_preference_value = args.old_st_store.preferences[id]
+    local new_preference_value = device.preferences[id]
+    if old_preference_value ~= new_preference_value then
+      -- Configure on-off cluster, attributte 0x8002 and 4003 to value restore state in preferences
+      if id == "restoreState" then
+        for ids, value in pairs(device.profile.components) do
+          local comp = device.profile.components[ids].id
+          if comp == "main" then
+            local endpoint = device:get_endpoint_for_component_id(comp)
+            local value_to_send = tonumber(new_preference_value)
+            local data_value = { value = value_to_send, ID = 0x30 }
+            local cluster_id = { value = 0x0006 }
+            -- write for standard devices
+            local attr_id = 0x4003
+            write.write_attribute_function(device, cluster_id, attr_id, data_value, endpoint)
+            -- write for tuya devices (Restore previous state = 0x02)
+            if new_preference_value == "255" then data_value = { value = 0x02, ID = 0x30 } end
+            attr_id = 0x8002
+            write.write_attribute_function(device, cluster_id, attr_id, data_value, endpoint)
+          end
+        end
+      end
+    end
+  end
+end
+
+--------------------------------------------------
 -- DRIVER
 --------------------------------------------------
 
@@ -237,7 +272,8 @@ local driver_template = {
   },
 
   lifecycle_handlers = {
-    init = device_init
+    init = device_init,
+    infoChanged = do_preferences,
   },
 
   component_to_endpoint = component_to_endpoint,

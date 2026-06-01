@@ -26,6 +26,17 @@ components:
     capabilities:
       - id: switch
         version: 1
+preferences:
+  - name: restoreState
+    title: Estado após falta de energia
+    description: "Após o restabelecimento da energia, o estado pode ser restaurado ao estado anterior ou permanecer desligado."
+    preferenceType: enumeration
+    definition:
+      options:
+        "0": "Sempre desligada"
+        "1": "Sempre ligada"
+        "255": "Último estado"
+      default: "255"
 metadata:
   deviceType: SmartPlug
   ocfDeviceType: oic.d.smartplug
