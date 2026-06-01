@@ -1,5 +1,5 @@
-name: "Driver Edge ST Dreame Vacuum"
-packageKey: "driver-edge-st-dreame-vacuum"
+name: "Dreame D10 Plus Gen 2"
+packageKey: "dreame-d10-plus-gen2-ha"
 description: "SmartThings Edge Driver para Home Assistant Vacuum via WebSocket."
 vendorSupportInformation: 'Esse Driver requer o uso do Home Assistant e Addon da Dreame para funcionar. Mais informações: <a href="https://github.com/weberamaral/edge-drivers/blob/main/ha-dreame-vacuum/README.md">https://github.com/weberamaral/edge-drivers/blob/main/ha-dreame-vacuum/README.md</a>'
 permissions:
