@@ -1,0 +1,100 @@
+{
+  "dashboard": {
+    "states": [
+      {
+        "label": "{{cycleState.value}}",
+        "alternatives": [
+          {
+            "key": "idle",
+            "value": "{{i18n.attributes.cycleState.i18n.value.idle.label}}",
+            "type": "inactive"
+          },
+          {
+            "key": "started",
+            "value": "{{i18n.attributes.cycleState.i18n.value.started.label}}",
+            "type": "active"
+          },
+          {
+            "key": "running",
+            "value": "{{i18n.attributes.cycleState.i18n.value.running.label}}",
+            "type": "active"
+          },
+          {
+            "key": "completed",
+            "value": "{{i18n.attributes.cycleState.i18n.value.completed.label}}",
+            "type": "active"
+          }
+        ]
+      }
+    ],
+    "actions": []
+  },
+  "detailView": [
+    {
+      "label": "{{i18n.label}}",
+      "displayType": "state",
+      "state": {
+        "label": "{{cycleState.value}}",
+        "alternatives": [
+          {
+            "key": "idle",
+            "value": "{{i18n.attributes.cycleState.i18n.value.idle.label}}",
+            "type": "inactive"
+          },
+          {
+            "key": "started",
+            "value": "{{i18n.attributes.cycleState.i18n.value.started.label}}",
+            "type": "active"
+          },
+          {
+            "key": "running",
+            "value": "{{i18n.attributes.cycleState.i18n.value.running.label}}",
+            "type": "active"
+          },
+          {
+            "key": "completed",
+            "value": "{{i18n.attributes.cycleState.i18n.value.completed.label}}",
+            "type": "active"
+          }
+        ]
+      }
+    }
+  ],
+  "automation": {
+    "conditions": [
+      {
+        "label": "{{i18n.label}}",
+        "displayType": "list",
+        "list": {
+          "value": "cycleState.value",
+          "valueType": "string",
+          "alternatives": [
+            {
+              "key": "idle",
+              "value": "{{i18n.attributes.cycleState.i18n.value.idle.label}}",
+              "type": "inactive"
+            },
+            {
+              "key": "started",
+              "value": "{{i18n.attributes.cycleState.i18n.value.started.label}}",
+              "type": "active"
+            },
+            {
+              "key": "running",
+              "value": "{{i18n.attributes.cycleState.i18n.value.running.label}}",
+              "type": "active"
+            },
+            {
+              "key": "completed",
+              "value": "{{i18n.attributes.cycleState.i18n.value.completed.label}}",
+              "type": "active"
+            }
+          ]
+        }
+      }
+    ],
+    "actions": []
+  },
+  "id": "signalprogram56169.cycleState",
+  "version": 1
+}

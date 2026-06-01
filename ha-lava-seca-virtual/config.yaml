@@ -1,0 +1,6 @@
+name: "Lava e Seca Virtual"
+packageKey: "lava-seca-virtual-ha"
+description: "Sensor binário exportado via Matterbridge para criar uma máquina de lava e seca virtual."
+permissions:
+  matter: {}
+vendorSupportInformation: 'Esse Driver requer o uso do Home Assistant e Addon Matterbridge para funcionar. Mais informações: <a href="https://github.com/weberamaral/edge-drivers/blob/main/lava-seca-virtual-ha/README.md">https://github.com/weberamaral/edge-drivers/blob/main/lava-seca-virtual-ha/README.md</a>'

@@ -1,0 +1,18 @@
+{
+  "tag": "pt-BR",
+  "label": "Ciclo",
+  "attributes": {
+    "cycleState": {
+      "label": "Ciclo",
+      "displayTemplate": "{{attribute}}: {{value}}",
+      "i18n": {
+        "value": {
+          "idle": { "label": "Parado" },
+          "started": { "label": "Iniciado" },
+          "running": { "label": "Em execução" },
+          "completed": { "label": "Concluído" }
+        }
+      }
+    }
+  }
+}
